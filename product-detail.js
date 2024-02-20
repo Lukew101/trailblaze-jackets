@@ -1,3 +1,5 @@
+import { priceConverter } from "./priceConverter.js";
+
 const productDetailContainer = document.querySelector(".product-detail");
 
 async function fetchProductDetail() {
@@ -8,15 +10,35 @@ async function fetchProductDetail() {
   );
   const product = await response.json();
   console.log(product);
+
+  const regularPrice = priceConverter(product.prices.regular_price);
+
+  if (product.on_sale) {
+    const salePrice = priceConverter(product.prices.sale_price);
+    productDetailContainer.innerHTML = `
+        <div>
+            <img src="${product.images[0].src}" alt="${product.name}" class="product-detail-image">
+            <div>
+                <h2>${product.name}</h2>
+                <p class="cross-out-regular-price">${regularPrice} kr</p>
+                <p>${salePrice} kr</p>
+                <p>${product.description}</p>
+            </div>
+        </div>
+        `;
+    return;
+  }
+
   productDetailContainer.innerHTML = `
     <div>
         <img src="${product.images[0].src}" alt="${product.name}" class="product-detail-image">
         <div>
             <h2>${product.name}</h2>
-            <p>${product.prices.price}</p>
+            <p>${regularPrice} kr</p>
             <p>${product.description}</p>
         </div>
     </div>
     `;
 }
+
 fetchProductDetail();
