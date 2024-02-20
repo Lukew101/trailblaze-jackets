@@ -6,7 +6,7 @@ async function fetchProductDetail() {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
   const response = await fetch(
-    `https://trailblaze-jackets.42web.io/wp-json/wc/store/products/${productId}`
+    `https://cors.noroff.dev/https://trailblaze-jackets.42web.io/wp-json/wc/store/products/${productId}`
   );
   const product = await response.json();
   console.log(product);
