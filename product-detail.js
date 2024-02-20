@@ -2,12 +2,17 @@ import { priceConverter } from "./priceConverter.js";
 
 const productDetailContainer = document.querySelector(".product-detail");
 
+
 async function fetchProductDetail() {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
-  const response = await fetch(
-    `https://cors.noroff.dev/https://trailblaze-jackets.42web.io/wp-json/wc/store/products/${productId}`
-  );
+  const baseUrl = `https://cors.noroff.dev/https://trailblaze-jackets.42web.io/wp-json/wc/store/products/${productId}`;
+
+  const response = await fetch(baseUrl, {
+    headers: {
+      'Origin': 'https://astounding-truffle-903da9.netlify.app' 
+    }
+  });
   const product = await response.json();
   console.log(product);
 

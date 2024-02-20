@@ -4,7 +4,11 @@ const baseUrl = "https://cors.noroff.dev/https://trailblaze-jackets.42web.io/wp-
 const productContainer = document.querySelector(".products-list");
 
 async function fetchProducts(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    headers: {
+      'Origin': 'https://astounding-truffle-903da9.netlify.app' 
+    }
+  });
   const products = await response.json();
   console.log(products);
   products.forEach(function (product) {
