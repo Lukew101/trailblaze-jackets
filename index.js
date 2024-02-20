@@ -1,12 +1,10 @@
 import { priceConverter } from "./priceConverter.js";
 
-const baseUrl = "https://trailblaze-jackets.42web.io/wp-json/wc/store/products";
+const baseUrl = "https://cors.noroff.dev/https://trailblaze-jackets.42web.io/wp-json/wc/store/products";
 const productContainer = document.querySelector(".products-list");
 
 async function fetchProducts(url) {
-  const response = await fetch(url, {
-    mode: 'no-cors'
-  });
+  const response = await fetch(url);
   const products = await response.json();
   console.log(products);
   products.forEach(function (product) {
