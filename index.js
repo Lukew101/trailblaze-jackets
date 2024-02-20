@@ -4,7 +4,9 @@ const baseUrl = "https://trailblaze-jackets.42web.io/wp-json/wc/store/products";
 const productContainer = document.querySelector(".products-list");
 
 async function fetchProducts(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    mode: 'no-cors'
+  });
   const products = await response.json();
   console.log(products);
   products.forEach(function (product) {
