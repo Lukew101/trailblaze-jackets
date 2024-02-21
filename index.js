@@ -1,6 +1,6 @@
 import { priceConverter } from "./priceConverter.js";
 
-const baseUrl = "https://cors.noroff.dev/https://trailblaze-jackets.42web.io/wp-json/wc/store/products";
+const baseUrl = "https://cors.noroff.dev/https://www.trailblaze-jackets.no/wp-json/wc/store/products";
 const productContainer = document.querySelector(".products-list");
 
 async function fetchProducts(url) {
