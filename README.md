@@ -1,7 +1,7 @@
 # Trailblaze Jackets
 
 ### *Important note*
-The server is currently not running due to a free subscription expiring. Please find two videos below demonstrating the application.
+The server is currently not running due to a free subscription expiring. Therefore, the website is currently not functional.
 
 ## Description
 Welcome to Trailblaze Jackets, a project for an assignment at Noroff that uses WordPress as a backend server to manage content and product data, while the frontend is built with regular web technologies for better site customization. Trailblaze Jackets is a mock company that aims to provide a visually appealing and functional site where people can explore and purchase jackets.
